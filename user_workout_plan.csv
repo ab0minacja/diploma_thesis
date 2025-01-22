@@ -1,0 +1,505 @@
+User,Day,Exercise,Muscle Group,Sets,Reps,Pause (sec),Weight (kg)
+piotr,1,Barbell Hip Thrust,Glutes,4,10,50,40.0
+piotr,1,Walking Lunges,Legs,5,8,70,0.0
+piotr,1,Zercher Squat (Sumo Stance),Legs,5,11,30,0.0
+piotr,1,Walking Dumbbell Lunge,Legs,4,12,70,0.0
+piotr,2,Back Extensions,Glutes,5,8,30,135.0
+piotr,2,Walking Barbell Lunge,Legs,5,10,50,0.0
+piotr,2,Narrow Grip Bench Press,Arms,3,9,80,9.0
+piotr,2,Bodyweight Glute Bridge,Glutes,5,11,90,0.0
+piotr,3,Good Mornings,Glutes,4,8,80,0.0
+piotr,3,Seated Barbell Calf Raise,Legs,5,10,90,0.0
+piotr,3,Walking Lunges,Legs,4,8,30,0.0
+piotr,3,Zercher Squat (Sumo Stance),Legs,4,12,60,0.0
+adam,1,Barbell Hip Thrust,Glutes,4,13,15,40.0
+adam,1,Deadlifts,Legs,2,12,60,50.0
+adam,1,Squats,Legs,4,14,15,0.0
+adam,1,Stiff Leg Deadlift,Legs,4,18,30,0.0
+adam,2,Good Morning,Glutes,3,12,45,0.0
+adam,2,Weighted Hyperextensions,Glutes,2,14,45,94.55625
+adam,2,Squats- Up to 495,Legs,3,14,15,0.0
+adam,2,Barbell Lunge,Legs,4,16,15,0.0
+adam,3,Hip Thrust,Glutes,3,15,15,0.0
+adam,3,Barbell Lunges,Legs,4,14,15,0.0
+adam,3,Barbell Hip Thrust,Glutes,2,19,30,40.0
+adam,3,Deadlifts,Legs,2,16,60,50.0
+tomek,1,Barbell Hip Thrust,Glutes,4,8,80,40.0
+tomek,1,Front Squat,Legs,3,8,70,0.0
+tomek,1,Stiff Leg Deadlifts,Legs,5,9,80,0.0
+tomek,1,Good Mornings,Glutes,4,11,70,0.0
+tomek,2,Band Good Mornings,Glutes,4,12,70,0.0
+tomek,2,Stiff Leg Deadlift,Legs,5,10,90,0.0
+tomek,2,Deadlift,Legs,3,8,50,0.0
+tomek,2,Barbell Squat,Legs,4,9,60,0.0
+tomek,3,Deadlifts,Legs,3,8,50,50.0
+tomek,3,Squats,Legs,4,12,30,0.0
+tomek,3,Front Squat,Legs,3,8,70,0.0
+tomek,3,Barbell Hip Thrust,Glutes,3,10,90,40.0
+,1,Standing Overhead Barbell Press,Chest&Shoulders,4,10,50,0.0
+,1,Barbell Bench Press,Chest&Shoulders,4,10,50,0.0
+,1,Overhead Press,Chest&Shoulders,3,8,30,0.0
+,1,Standing Overhead Press*,Chest&Shoulders,3,8,90,0.0
+,2,Standing Barbell Press,Chest&Shoulders,5,11,70,0.0
+,2,Military Press,Chest&Shoulders,3,12,80,0.0
+,2,Bench Press/Dumbbell Fly superset,Chest&Shoulders,5,8,30,0.0
+,2,Barbell Front Squat,Legs,3,11,70,0.0
+,3,Barbell Overhead Press,Chest&Shoulders,3,9,50,0.0
+,3,Machine Rear Delt Fly,Chest&Shoulders,4,11,30,0.0
+,3,Standing Overhead Barbell Press,Chest&Shoulders,3,12,80,0.0
+,3,Barbell Bench Press,Chest&Shoulders,5,8,80,0.0
+olga,1,Deadlifts,Legs,4,12,45,50.0
+olga,1,Rack-Pull Deadlift,Legs,2,14,45,36.0
+olga,1,Deadlifts with Chains,Legs,4,18,60,36.0
+olga,1,Deadlift,Legs,4,13,45,36.0
+olga,1,Stiff-Legged Deadlift,Legs,2,13,45,36.0
+olga,1,Front Squat,Legs,2,19,45,36.0
+olga,2,Squat,Legs,2,17,60,36.0
+olga,2,Squats,Legs,2,20,30,36.0
+olga,2,Reverse Lunge,Legs,3,12,60,36.0
+olga,2,Paused Squats,Legs,4,16,45,36.0
+olga,2,Bench Press/Dumbbell Fly superset,Chest&Shoulders,4,19,30,22.5
+olga,2,Barbell Bench Press,Chest&Shoulders,4,12,45,22.5
+olga,3,Bench Press,Chest&Shoulders,2,20,30,22.5
+olga,3,Military Press*,Chest&Shoulders,2,14,45,22.5
+olga,3,Barbell Military Press,Chest&Shoulders,4,18,30,22.5
+olga,3,Military Press,Chest&Shoulders,3,14,15,22.5
+olga,3,Standing Overhead Barbell Press,Chest&Shoulders,4,12,15,22.5
+olga,3,Overhead Press,Chest&Shoulders,4,15,45,22.5
+olga,1,Deadlifts,Legs,2,16,30,50.0
+olga,1,Rack-Pull Deadlift,Legs,2,13,30,0.6
+olga,1,Deadlifts with Chains,Legs,3,12,15,0.6
+olga,1,Deadlift,Legs,3,18,60,0.6
+olga,1,Stiff-Legged Deadlift,Legs,4,14,60,0.6
+olga,1,Front Squat,Legs,4,12,45,0.6
+olga,2,Squat,Legs,2,15,15,0.6
+olga,2,Squats,Legs,4,17,15,0.6
+olga,2,Reverse Lunge,Legs,4,16,45,0.6
+olga,2,Paused Squats,Legs,4,20,60,0.6
+olga,2,Bench Press/Dumbbell Fly superset,Chest&Shoulders,2,12,45,0.4
+olga,2,Barbell Bench Press,Chest&Shoulders,4,16,15,0.4
+olga,3,Bench Press,Chest&Shoulders,2,20,45,0.4
+olga,3,Military Press*,Chest&Shoulders,4,12,45,0.4
+olga,3,Barbell Military Press,Chest&Shoulders,4,19,45,0.4
+olga,3,Military Press,Chest&Shoulders,2,12,45,0.4
+olga,3,Standing Overhead Barbell Press,Chest&Shoulders,2,15,30,0.4
+olga,3,Overhead Press,Chest&Shoulders,4,16,60,0.4
+olek,1,Ab Wheel Roll Out,Core,4,8,90,0.0
+olek,1,Lying Tricep Extension,Arms,4,7,80,0.0
+olek,1,Barbell or Ab Wheel Roll Outs,Core,4,12,30,0.0
+olek,1,Wide Grip Barbell Upright Row,Back,5,6,70,0.0
+olek,2,Lying knee raises,Core,3,8,90,0.0
+olek,2,Rotating Mountain Climber,Core,3,7,40,0.0
+olek,2,Skullcrusher,Arms,3,7,30,0.0
+olek,2,One Arm Barbell Row,Back,3,9,40,0.0
+olek,3,"Incline Skull Crushers (Aim for 12-15 reps for the first set, as many as you can get for the second set.)",Arms,4,6,90,0.0
+olek,3,Deadlift,Legs,5,11,60,0.0
+olek,3,Lying Tricep Extension,Arms,3,6,90,0.0
+olek,3,Ab Wheel Roll Out,Core,4,6,70,0.0
+olgamaria,1,Hyperextension,Glutes,3,11,70,135.0
+olgamaria,1,Romanian Deadlift,Legs,5,12,40,28.0
+olgamaria,1,Standing Calf Raise,Legs,5,11,80,28.0
+olgamaria,1,Barbell Hip Thrust,Glutes,4,12,40,40.0
+olgamaria,2,Band Good Mornings,Glutes,3,10,90,21.0
+olgamaria,2,Standing Glute Kickback,Glutes,3,10,50,21.0
+olgamaria,2,Barbell Overhead Extension,Arms,4,8,70,10.5
+olgamaria,2,1 Leg Glute Bridge,Glutes,5,8,70,21.0
+olgamaria,3,Left Leg Lunge,Legs,5,8,40,28.0
+olgamaria,3,Romanian Deadlifts,Legs,4,11,80,28.0
+olgamaria,3,Romanian Deadlift,Legs,3,11,30,28.0
+olgamaria,3,Standing Calf Raise,Legs,4,11,70,28.0
+olgamaria,1,Hyperextension,Glutes,4,8,60,135.0
+olgamaria,1,Romanian Deadlift,Legs,3,10,60,28.0
+olgamaria,1,Standing Calf Raise,Legs,3,10,30,28.0
+olgamaria,1,Barbell Hip Thrust,Glutes,5,8,70,40.0
+olgamaria,2,Band Good Mornings,Glutes,4,10,90,21.0
+olgamaria,2,Standing Glute Kickback,Glutes,5,10,70,21.0
+olgamaria,2,Barbell Overhead Extension,Arms,5,11,90,10.5
+olgamaria,2,1 Leg Glute Bridge,Glutes,5,12,50,21.0
+olgamaria,3,Left Leg Lunge,Legs,4,8,50,28.0
+olgamaria,3,Romanian Deadlifts,Legs,5,9,30,28.0
+olgamaria,3,Romanian Deadlift,Legs,5,11,90,28.0
+olgamaria,3,Standing Calf Raise,Legs,4,12,50,28.0
+olgamaria,1,Hyperextension,Glutes,5,11,80,135.0
+olgamaria,1,Romanian Deadlift,Legs,3,11,80,28.0
+olgamaria,1,Standing Calf Raise,Legs,5,12,60,28.0
+olgamaria,1,Barbell Hip Thrust,Glutes,5,9,30,40.0
+olgamaria,2,Band Good Mornings,Glutes,4,9,80,21.0
+olgamaria,2,Standing Glute Kickback,Glutes,5,10,70,21.0
+olgamaria,2,Barbell Overhead Extension,Arms,3,12,60,10.5
+olgamaria,2,1 Leg Glute Bridge,Glutes,5,12,70,21.0
+olgamaria,3,Left Leg Lunge,Legs,5,10,30,28.0
+olgamaria,3,Romanian Deadlifts,Legs,4,8,80,28.0
+olgamaria,3,Romanian Deadlift,Legs,4,11,70,28.0
+olgamaria,3,Standing Calf Raise,Legs,4,8,80,28.0
+olek,1,Ab Wheel Roll Out,Core,4,10,50,0.0
+olek,1,Lying Tricep Extension,Arms,4,7,40,0.0
+olek,1,Barbell or Ab Wheel Roll Outs,Core,4,12,60,0.0
+olek,1,Wide Grip Barbell Upright Row,Back,4,12,50,0.0
+olek,2,Lying knee raises,Core,3,6,90,0.0
+olek,2,Rotating Mountain Climber,Core,5,10,40,0.0
+olek,2,Skullcrusher,Arms,4,6,60,0.0
+olek,2,One Arm Barbell Row,Back,4,8,70,0.0
+olek,3,"Incline Skull Crushers (Aim for 12-15 reps for the first set, as many as you can get for the second set.)",Arms,3,10,70,0.0
+olek,3,Deadlift,Legs,3,12,60,0.0
+olek,3,Lying Tricep Extension,Arms,3,7,70,0.0
+olek,3,Ab Wheel Roll Out,Core,4,7,80,0.0
+olek,1,Ab Wheel Roll Out,Core,3,6,50,0.0
+olek,1,Lying Tricep Extension,Arms,5,10,50,0.0
+olek,1,Barbell or Ab Wheel Roll Outs,Core,3,7,80,0.0
+olek,1,Wide Grip Barbell Upright Row,Back,4,6,40,0.0
+olek,2,Lying knee raises,Core,4,10,90,0.0
+olek,2,Rotating Mountain Climber,Core,3,8,40,0.0
+olek,2,Skullcrusher,Arms,3,11,60,0.0
+olek,2,One Arm Barbell Row,Back,4,12,70,0.0
+olek,3,"Incline Skull Crushers (Aim for 12-15 reps for the first set, as many as you can get for the second set.)",Arms,3,9,90,0.0
+olek,3,Deadlift,Legs,3,7,80,0.0
+olek,3,Lying Tricep Extension,Arms,4,11,50,0.0
+olek,3,Ab Wheel Roll Out,Core,3,8,40,0.0
+olek,1,Ab Wheel Roll Out,Core,3,10,60,0.0
+olek,1,Lying Tricep Extension,Arms,3,10,90,0.0
+olek,1,Barbell or Ab Wheel Roll Outs,Core,5,10,40,0.0
+olek,1,Wide Grip Barbell Upright Row,Back,4,7,60,0.0
+olek,2,Lying knee raises,Core,3,9,50,0.0
+olek,2,Rotating Mountain Climber,Core,3,10,30,0.0
+olek,2,Skullcrusher,Arms,3,9,60,0.0
+olek,2,One Arm Barbell Row,Back,5,8,30,0.0
+olek,3,"Incline Skull Crushers (Aim for 12-15 reps for the first set, as many as you can get for the second set.)",Arms,3,7,70,0.0
+olek,3,Deadlift,Legs,3,7,90,0.0
+olek,3,Lying Tricep Extension,Arms,4,7,60,0.0
+olek,3,Ab Wheel Roll Out,Core,3,7,90,0.0
+olek,1,Ab Wheel Roll Out,Core,4,8,70,0.0
+olek,1,Lying Tricep Extension,Arms,4,7,50,0.0
+olek,1,Barbell or Ab Wheel Roll Outs,Core,5,6,30,0.0
+olek,1,Wide Grip Barbell Upright Row,Back,4,12,50,0.0
+olek,2,Lying knee raises,Core,5,7,40,0.0
+olek,2,Rotating Mountain Climber,Core,5,11,70,0.0
+olek,2,Skullcrusher,Arms,4,9,90,0.0
+olek,2,One Arm Barbell Row,Back,5,9,30,0.0
+olek,3,"Incline Skull Crushers (Aim for 12-15 reps for the first set, as many as you can get for the second set.)",Arms,5,10,90,0.0
+olek,3,Deadlift,Legs,5,11,40,0.0
+olek,3,Lying Tricep Extension,Arms,5,9,50,0.0
+olek,3,Ab Wheel Roll Out,Core,5,11,40,0.0
+olek,1,Ab Wheel Roll Out,Core,5,7,90,15.0
+olek,1,Lying Tricep Extension,Arms,5,6,50,7.0
+olek,1,Barbell or Ab Wheel Roll Outs,Core,5,11,60,15.0
+olek,1,Wide Grip Barbell Upright Row,Back,5,9,60,20.0
+olek,2,Lying knee raises,Core,4,12,40,15.0
+olek,2,Rotating Mountain Climber,Core,4,12,50,15.0
+olek,2,Skullcrusher,Arms,5,9,90,7.0
+olek,2,One Arm Barbell Row,Back,3,6,50,20.0
+olek,3,"Incline Skull Crushers (Aim for 12-15 reps for the first set, as many as you can get for the second set.)",Arms,4,12,40,7.0
+olek,3,Deadlift,Legs,4,11,80,15.0
+olek,3,Lying Tricep Extension,Arms,4,8,60,7.0
+olek,3,Ab Wheel Roll Out,Core,4,12,40,15.0
+olek,1,Ab Wheel Roll Out,Core,4,10,50,15.0
+olek,1,Lying Tricep Extension,Arms,4,10,70,7.0
+olek,1,Barbell or Ab Wheel Roll Outs,Core,3,10,80,15.0
+olek,1,Wide Grip Barbell Upright Row,Back,5,8,80,20.0
+olek,2,Lying knee raises,Core,4,10,90,15.0
+olek,2,Rotating Mountain Climber,Core,4,10,30,15.0
+olek,2,Skullcrusher,Arms,4,6,60,7.0
+olek,2,One Arm Barbell Row,Back,3,7,80,20.0
+olek,3,"Incline Skull Crushers (Aim for 12-15 reps for the first set, as many as you can get for the second set.)",Arms,4,8,60,7.0
+olek,3,Deadlift,Legs,4,8,70,15.0
+olek,3,Lying Tricep Extension,Arms,3,9,80,7.0
+olek,3,Ab Wheel Roll Out,Core,3,6,80,15.0
+lola,1,Barbell Hip Thrust,Glutes,3,12,70,40.0
+lola,1,Barbell Walking Lunge,Legs,5,9,50,32.0
+lola,1,Romanian Deadlift,Legs,4,12,50,32.0
+lola,1,Walking Lunges,Legs,5,8,50,32.0
+lola,2,Hyperextension,Glutes,5,9,50,135.0
+lola,2,Walking Dumbbell Lunge,Legs,3,12,90,32.0
+lola,2,Standing Calf Raise,Legs,5,12,30,32.0
+lola,2,Standing Glute Kickback,Glutes,5,10,60,24.0
+lola,3,DB Walking Lunge,Legs,5,9,70,32.0
+lola,3,Walking lunge with dumbbell squat,Legs,4,6,80,32.0
+lola,3,Barbell Walking Lunge,Legs,3,12,30,32.0
+lola,3,Barbell Hip Thrust,Glutes,5,10,30,40.0
+lola,1,Barbell Hip Thrust,Glutes,4,6,90,40.0
+lola,1,Barbell Walking Lunge,Legs,4,12,50,32.0
+lola,1,Romanian Deadlift,Legs,5,7,50,32.0
+lola,1,Walking Lunges,Legs,3,9,50,32.0
+lola,2,Hyperextension,Glutes,3,7,90,135.0
+lola,2,Walking Dumbbell Lunge,Legs,3,10,80,32.0
+lola,2,Standing Calf Raise,Legs,5,10,50,32.0
+lola,2,Standing Glute Kickback,Glutes,3,9,60,24.0
+lola,3,DB Walking Lunge,Legs,3,9,60,32.0
+lola,3,Walking lunge with dumbbell squat,Legs,3,7,90,32.0
+lola,3,Barbell Walking Lunge,Legs,3,8,90,32.0
+lola,3,Barbell Hip Thrust,Glutes,4,9,80,40.0
+ania,1,Barbell Hip Thrust,Glutes,3,12,50,40.0
+ania,1,Low Back Extension ,Glutes,4,9,80,20.1
+ania,1,Band Good Mornings,Glutes,4,6,90,20.1
+ania,1,Deadlift,Legs,4,10,80,26.8
+ania,2,Dumbbell Hip Thrust,Glutes,5,7,30,20.1
+ania,2,Paused Squats,Legs,3,8,60,26.8
+ania,2,Deadlifts,Legs,3,10,80,50.0
+ania,2,Squat,Legs,5,8,30,26.8
+ania,1,Barbell Hip Thrust,Glutes,5,9,50,40.0
+ania,1,Low Back Extension ,Glutes,3,12,40,20.1
+ania,1,Band Good Mornings,Glutes,5,11,60,20.1
+ania,1,Deadlift,Legs,5,7,50,26.8
+ania,2,Dumbbell Hip Thrust,Glutes,4,11,50,20.1
+ania,2,Paused Squats,Legs,3,8,40,26.8
+ania,2,Deadlifts,Legs,4,11,90,50.0
+ania,2,Squat,Legs,5,9,50,26.8
+hania,1,Barbell Hip Thrust,Glutes,3,20,45,40.0
+hania,1,Romanian Deadlift,Legs,2,19,15,28.0
+hania,1,Hyperextension,Glutes,4,15,60,135.0
+hania,1,Romanian Deadlifts,Legs,3,12,30,28.0
+hania,2,Standing Glute Kickback,Glutes,2,17,45,21.0
+hania,2,Standing Calf Raise,Legs,3,16,15,28.0
+hania,2,Deadlifts,Legs,4,13,15,50.0
+hania,2,Dumbbell Lunges,Legs,3,16,30,139.2078125
+hania,3,Dumbbell Goblet Squat,Legs,2,16,30,28.0
+hania,3,Right Leg Lunge,Legs,4,18,30,28.0
+hania,3,Romanian Deadlift,Legs,3,15,30,28.0
+hania,3,Barbell Hip Thrust,Glutes,2,12,60,40.0
+hania,1,Barbell Hip Thrust,Glutes,4,18,60,40.0
+hania,1,Romanian Deadlift,Legs,3,15,30,28.0
+hania,1,Hyperextension,Glutes,2,17,15,135.0
+hania,1,Romanian Deadlifts,Legs,4,17,30,28.0
+hania,2,Standing Glute Kickback,Glutes,3,13,30,21.0
+hania,2,Standing Calf Raise,Legs,4,12,30,28.0
+hania,2,Deadlifts,Legs,2,17,30,50.0
+hania,2,Dumbbell Lunges,Legs,2,19,60,139.2078125
+hania,3,Dumbbell Goblet Squat,Legs,2,16,30,28.0
+hania,3,Right Leg Lunge,Legs,2,14,30,28.0
+hania,3,Romanian Deadlift,Legs,2,12,30,28.0
+hania,3,Barbell Hip Thrust,Glutes,3,18,60,40.0
+hania,1,Barbell Hip Thrust,Glutes,2,19,15,40.0
+hania,1,Romanian Deadlift,Legs,3,16,30,28.0
+hania,1,Hyperextension,Glutes,3,13,60,135.0
+hania,1,Romanian Deadlifts,Legs,4,14,60,28.0
+hania,2,Standing Glute Kickback,Glutes,4,14,15,21.0
+hania,2,Standing Calf Raise,Legs,3,20,60,28.0
+hania,2,Deadlifts,Legs,4,15,60,50.0
+hania,2,Dumbbell Lunges,Legs,3,12,60,139.2078125
+hania,3,Dumbbell Goblet Squat,Legs,2,20,15,28.0
+hania,3,Right Leg Lunge,Legs,4,12,60,28.0
+hania,3,Romanian Deadlift,Legs,3,19,45,28.0
+hania,3,Barbell Hip Thrust,Glutes,2,15,45,40.0
+tola,1,Barbell Hip Thrust,Glutes,3,13,45,40.0
+tola,1,Deadlifts,Legs,2,14,30,50.0
+tola,1,Good Mornings Off Pins,Glutes,2,19,45,12.5
+tola,1,Squats,Legs,3,18,30,5.0
+tola,2,Smith MachineHip Thrust,Glutes,2,19,15,3.0
+tola,2,Barbell Squat,Legs,3,13,60,5.0
+tola,2,Stiff-Leg Deadlifts,Legs,3,18,15,5.0
+tola,2,Stiff Leg Deadlift,Legs,3,13,60,5.0
+tola,3,Low Back Extension ,Glutes,4,14,30,3.0
+tola,3,Band Good Mornings,Glutes,2,16,60,3.0
+tola,3,Barbell Hip Thrust,Glutes,2,12,45,40.0
+tola,3,Deadlifts,Legs,4,17,15,50.0
+jola,1,Barbell Hip Thrust,Glutes,3,10,80,40.0
+jola,1,Squats,Legs,5,11,70,35.0
+jola,1,Stiff Leg Deadlift,Legs,4,8,40,35.0
+jola,1,Deadlifts,Legs,3,6,80,50.0
+jola,2,Good Morning,Glutes,4,6,80,21.0
+jola,2,Squats- Up to 495,Legs,3,10,40,35.0
+jola,2,Barbell Lunge,Legs,4,9,50,35.0
+jola,2,Barbell Lunges,Legs,3,11,40,35.0
+jola,3,Weighted Hyperextensions,Glutes,3,12,80,94.55625
+jola,3,Deadlift (60% of 1RM),Legs,5,8,90,35.0
+jola,3,Barbell Hip Thrust,Glutes,4,6,40,40.0
+jola,3,Squats,Legs,3,12,30,35.0
+ddd,1,Barbell Hip Thrust,Glutes,4,15,15,40.0
+ddd,1,Deadlifts,Legs,2,20,60,50.0
+ddd,1,Good Mornings Off Pins,Glutes,4,12,30,12.5
+ddd,1,Squats,Legs,2,12,30,22.0
+ddd,2,Smith MachineHip Thrust,Glutes,2,14,15,13.2
+ddd,2,Barbell Squat,Legs,3,17,30,22.0
+ddd,2,Stiff-Leg Deadlifts,Legs,2,17,60,22.0
+ddd,2,Stiff Leg Deadlift,Legs,4,13,30,22.0
+ddd,3,Low Back Extension ,Glutes,3,19,45,13.2
+ddd,3,Band Good Mornings,Glutes,2,16,15,13.2
+ddd,3,Barbell Hip Thrust,Glutes,3,19,30,40.0
+ddd,3,Deadlifts,Legs,2,20,15,50.0
+ddasda,1,Barbell Hip Thrust,Glutes,3,12,15,40.0
+ddasda,1,Deadlifts,Legs,3,12,30,50.0
+ddasda,1,Good Mornings Off Pins,Glutes,2,19,30,12.5
+ddasda,1,Squats,Legs,2,15,60,22.0
+ddasda,2,Smith MachineHip Thrust,Glutes,2,19,30,13.2
+ddasda,2,Barbell Squat,Legs,4,17,15,22.0
+ddasda,2,Stiff-Leg Deadlifts,Legs,3,18,45,22.0
+ddasda,2,Stiff Leg Deadlift,Legs,4,16,15,22.0
+ddasda,3,Low Back Extension ,Glutes,4,14,45,13.2
+ddasda,3,Band Good Mornings,Glutes,3,12,60,13.2
+ddasda,3,Barbell Hip Thrust,Glutes,3,18,60,40.0
+ddasda,3,Deadlifts,Legs,4,20,45,50.0
+dddsa,1,Barbell Hip Thrust,Glutes,3,19,30,40.0
+dddsa,1,Deadlifts,Legs,3,14,45,50.0
+dddsa,1,Good Mornings Off Pins,Glutes,3,16,45,12.5
+dddsa,1,Squats,Legs,3,20,30,33.0
+dddsa,2,Smith MachineHip Thrust,Glutes,4,17,30,19.8
+dddsa,2,Barbell Squat,Legs,4,18,60,33.0
+dddsa,2,Stiff-Leg Deadlifts,Legs,4,16,30,33.0
+dddsa,2,Stiff Leg Deadlift,Legs,4,14,30,33.0
+dddsa,3,Low Back Extension ,Glutes,3,14,45,19.8
+dddsa,3,Band Good Mornings,Glutes,2,19,15,19.8
+dddsa,3,Barbell Hip Thrust,Glutes,4,18,45,40.0
+dddsa,3,Deadlifts,Legs,4,19,45,50.0
+olek,1,Deadlift ,Legs,3,12,80,15.0
+olek,1,Squat ,Legs,5,11,50,15.0
+olek,1,Stiff Leg Deadlift,Legs,5,7,80,15.0
+olek,1,Squat,Legs,3,6,70,15.0
+olek,1,Barbell Lunge,Legs,4,8,50,15.0
+olek,1,Heavy Deep Squat,Legs,3,7,90,15.0
+olek,2,Sissy Squat,Legs,3,12,90,15.0
+olek,2,Deadlift,Legs,3,12,30,15.0
+olek,2,Squats,Legs,3,11,70,15.0
+olek,2,Reverse Hack Squats,Legs,3,12,60,15.0
+olek,2,Straight Leg Deadlifts,Legs,5,6,50,15.0
+olek,2,Barbell Squat,Legs,4,10,40,15.0
+olek,3,Front Squat,Legs,4,10,50,15.0
+olek,3,Barbell Squats,Legs,4,7,60,15.0
+olek,3,Stiff Leg Deadlifts,Legs,4,8,30,15.0
+olek,3,Heavy Deadlift,Legs,5,7,50,15.0
+olek,3,Step Ups,Legs,5,8,50,15.0
+olek,3,Dumbbell Step Up,Legs,5,8,70,15.0
+olek,1,Deadlift ,Legs,3,8,90,0.0
+olek,1,Squat ,Legs,5,9,90,0.0
+olek,1,Stiff Leg Deadlift,Legs,3,6,40,0.0
+olek,1,Squat,Legs,4,9,60,0.0
+olek,1,Barbell Lunge,Legs,5,8,30,0.0
+olek,1,Heavy Deep Squat,Legs,5,12,30,0.0
+olek,2,Sissy Squat,Legs,5,8,40,0.0
+olek,2,Deadlift,Legs,4,9,80,0.0
+olek,2,Squats,Legs,4,11,70,0.0
+olek,2,Reverse Hack Squats,Legs,4,6,30,0.0
+olek,2,Straight Leg Deadlifts,Legs,3,9,50,0.0
+olek,2,Barbell Squat,Legs,4,12,50,0.0
+olek,3,Front Squat,Legs,3,10,40,0.0
+olek,3,Barbell Squats,Legs,3,9,70,0.0
+olek,3,Stiff Leg Deadlifts,Legs,4,10,90,0.0
+olek,3,Heavy Deadlift,Legs,3,12,30,0.0
+olek,3,Step Ups,Legs,4,8,80,0.0
+olek,3,Dumbbell Step Up,Legs,3,12,60,0.0
+dddsa,1,Squats,Legs,2,20,60,245.75
+dddsa,1,Heavy Deadlift,Legs,3,14,15,245.75
+dddsa,1,Lying Tricep Extension,Arms,3,20,15,76.42
+ddd,1,Squats,Legs,2,19,60,65.93
+ddd,1,Heavy Deadlift,Legs,2,18,45,65.93
+ddd,1,Lying Tricep Extension,Arms,2,15,15,20.5
+ddd,1,Squats,Legs,3,18,60,65.0
+ddd,1,Heavy Deadlift,Legs,2,17,15,65.0
+ddd,1,Lying Tricep Extension,Arms,4,18,60,20.0
+Marek,1,Back Extensions,Glutes,5,3,280,135.0
+Marek,1,Walking Dumbbell Lunge,Legs,6,5,120,185.0
+Marek,1,Walking Lunge,Legs,4,3,200,190.0
+Marek,1,Hyperextension,Glutes,5,3,260,135.0
+Marek,2,Back Extension,Glutes,5,6,280,132.5
+Marek,2,Dumbbell Lunges,Legs,5,4,300,185.0
+Marek,2,Hanging Leg Raises,Core,6,5,260,97.5
+Marek,2,Back Extensions - 45 Degrees,Glutes,4,4,260,132.5
+Marek,3,Glute Bridge,Glutes,4,6,120,132.5
+Marek,3,Squat,Legs,5,2,180,185.0
+Marek,3,Walking Dumbbell Lunge,Legs,4,6,300,185.0
+Marek,3,Back Extensions,Glutes,6,2,200,135.0
+Marek,4,Walking Dumbbell Lunge,Legs,6,1,140,185.0
+Marek,4,Back Extensions,Glutes,5,1,300,135.0
+Marek,4,Walking Lunge,Legs,4,4,240,190.0
+Marek,4,Hyperextension,Glutes,4,2,280,135.0
+Kuba,1,"Tricep Pushdown, (hands 8-10"" apart)",Arms,5,8,80,7.5
+Kuba,1,Cable Rope Hammer Curl,Arms,3,11,50,7.5
+Kuba,1,Straight Bar Pushdowns,Arms,5,10,80,7.5
+Kuba,1,V Bar Pushdown,Arms,5,10,90,7.5
+Kuba,2,Cable Hammer Curl,Arms,5,8,30,7.5
+Kuba,2,Bent Overhead Cable V-Bar Extension,Arms,3,11,90,7.5
+Kuba,2,Cable Curls,Arms,5,8,90,7.5
+Kuba,2,Straight Bar Low Cable Curl,Arms,4,7,90,7.5
+Kuba,3,Overhead Plate Extensions^,Arms,4,12,90,7.5
+Kuba,3,Rope Cable Pushdowns,Arms,4,9,30,7.5
+Kuba,3,"Tricep Pushdown, (hands 8-10"" apart)",Arms,4,11,40,7.5
+Kuba,3,Cable Rope Hammer Curl,Arms,4,8,60,7.5
+Kuba,4,"Tricep Pushdown, (hands 8-10"" apart)",Arms,3,10,80,7.5
+Kuba,4,Cable Rope Hammer Curl,Arms,3,9,60,7.5
+Kuba,4,Straight Bar Pushdowns,Arms,3,10,60,7.5
+Kuba,4,V Bar Pushdown,Arms,5,7,90,7.5
+Kuba,5,"Tricep Pushdown, (hands 8-10"" apart)",Arms,3,6,90,7.5
+Kuba,5,Cable Rope Hammer Curl,Arms,5,11,70,7.5
+Kuba,5,Straight Bar Pushdowns,Arms,5,12,80,7.5
+Kuba,5,V Bar Pushdown,Arms,5,11,80,7.5
+Emilia,1,Hyperextension,Glutes,6,12,40,17.5
+Emilia,1,Calf Raise,Legs,5,10,50,25.0
+Emilia,1,X-Band Walk,Glutes,5,7,30,17.5
+Emilia,1,Low Back Extension ,Glutes,4,8,40,17.5
+Emilia,2,Banded Good Morning,Glutes,4,11,30,17.5
+Emilia,2,Goblet Squats,Legs,4,6,30,25.0
+Emilia,2,Kettlebell Swings,Legs,6,7,50,25.0
+Emilia,2,Glute Bridge,Glutes,4,6,60,17.5
+Emilia,3,1 Leg Glute Bridge,Glutes,4,12,50,17.5
+Emilia,3,Weighted Medium-Grip Pull-Ups,Back,3,6,60,17.5
+Emilia,3,Hyperextension,Glutes,3,6,60,17.5
+Emilia,3,Calf Raise,Legs,6,9,30,25.0
+Zofia,1,Barbell Hip Thrust,Glutes,4,15,15,37.5
+Zofia,1,Deadlifts,Legs,3,12,30,55.0
+Zofia,1,Squats,Legs,4,15,30,55.0
+Zofia,1,Smith MachineHip Thrust,Glutes,2,19,60,37.5
+Zofia,2,Good Mornings Off Pins,Glutes,3,15,30,37.5
+Zofia,2,Front Squats,Legs,3,15,15,55.0
+Zofia,2,Barbell Squat,Legs,3,19,45,55.0
+Zofia,2,Rack-Pull Deadlift,Legs,3,17,60,55.0
+Zofia,3,Deadlift,Legs,2,19,30,55.0
+Zofia,3,Stiff Leg Deadlift,Legs,2,17,45,55.0
+Zofia,3,Barbell Hip Thrust,Glutes,2,20,30,37.5
+Zofia,3,Deadlifts,Legs,4,16,30,55.0
+Michal,1,Weighted Triceps Dip,Arms,5,8,70,50.0
+Michal,1,Weighted Medium-Grip Pull-Ups,Back,4,10,80,92.5
+Michal,1,"Weighted TricepDips (Work up to a top set of 5 reps. Rest, reduce the weight by 50%, and do as many reps as you can. Rest, and do a third set with just body weight for as many reps as you can.)",Arms,4,8,80,50.0
+Michal,1,Hanging Leg Raise,Core,3,9,70,80.0
+Michal,2,Floor Dumbbell Press,Arms,3,7,90,50.0
+Michal,2,Kettlebell Row,Back,4,10,30,92.5
+Michal,2,Kettlebell Deficit Push Up,Chest&Shoulders,3,11,80,70.0
+Michal,2,Reverse Crunch,Core,4,9,80,80.0
+Michal,3,Assited Pull Up,Back,5,6,80,92.5
+Michal,3,Kettlebell Angled Press,Chest&Shoulders,3,10,90,70.0
+Michal,3,Weighted Triceps Dip,Arms,4,12,90,50.0
+Michal,3,Weighted Medium-Grip Pull-Ups,Back,5,11,80,92.5
+Michal,4,Weighted Triceps Dip,Arms,3,9,70,50.0
+Michal,4,Weighted Medium-Grip Pull-Ups,Back,4,9,40,92.5
+Michal,4,"Weighted TricepDips (Work up to a top set of 5 reps. Rest, reduce the weight by 50%, and do as many reps as you can. Rest, and do a third set with just body weight for as many reps as you can.)",Arms,3,7,90,50.0
+Michal,4,Hanging Leg Raise,Core,4,9,50,80.0
+u1,1,Back Extensions,Glutes,2,19,30,20.0
+u1,1,Romanian Deadlift,Legs,2,13,45,30.0
+u1,1,Seated Barbell Calf Raise,Legs,2,20,30,30.0
+u1,1,Walking Lunges,Legs,2,15,15,30.0
+u1,2,Back Extensions - 45 Degrees,Glutes,2,15,30,20.0
+u1,2,Dumbbell Lunges,Legs,3,17,60,30.0
+u1,2,Back Extension,Glutes,2,16,45,20.0
+u1,2,Barbell Hip Thrust,Glutes,4,12,45,20.0
+u1,3,Standing Barbell Calf Raise,Legs,4,18,45,30.0
+u1,3,Romanian Deadlifts,Legs,2,19,60,30.0
+u1,3,Romanian Deadlift,Legs,3,16,45,30.0
+u1,3,Seated Barbell Calf Raise,Legs,2,17,45,30.0
+u2,1,Rotating Mountain Climber,Core,3,8,60,40.0
+u2,1,Overhead Alternating Dumbbell Extensions,Arms,3,9,90,27.5
+u2,1,Lying knee raises,Core,5,9,90,40.0
+u2,1,Abductor Machine,Core,4,10,30,40.0
+u2,2,Adductor Machine,Core,4,12,50,40.0
+u2,2,One Arm Overhead Extension,Arms,4,11,40,27.5
+u2,2,Single Arm Overhead Extension,Arms,4,7,70,27.5
+u2,2,Lying Dumbbell Extension,Arms,3,8,90,27.5
+u2,3,Weighted Twisting Sit Up,Core,5,6,50,40.0
+u2,3,Dumbbell Step Up,Legs,5,10,50,85.0
+u2,3,Rotating Mountain Climber,Core,5,7,40,40.0
+u2,3,Overhead Alternating Dumbbell Extensions,Arms,5,8,90,27.5
+u2,4,Rotating Mountain Climber,Core,3,7,90,40.0
+u2,4,Overhead Alternating Dumbbell Extensions,Arms,4,12,30,27.5
+u2,4,Lying knee raises,Core,5,8,70,40.0
+u2,4,Abductor Machine,Core,3,12,90,40.0
+
+u3,1,Hyperextension,Glutes,6,3,120,180.0
+u3,1,(Assisted) Nordic Hamstring Curls,Legs,6,6,200,252.5
+u3,1,Hanging Leg Raises,Core,4,6,140,132.5
+u3,1,Back Extensions,Glutes,6,1,180,180.0
+u3,1,Back Extensions - 45 Degrees,Glutes,6,5,120,180.0
+u3,1,Back Extension,Glutes,4,5,160,180.0
+u3,1,45 Degree Back Extension,Glutes,5,5,200,180.0
+u3,2,X-Band Walk,Glutes,5,4,160,180.0
+u3,2,Walking Dumbbell Lunge,Legs,4,3,160,252.5
+u3,2,Weighted Hyperextensions,Glutes,5,5,280,180.0
+u3,2,Hyperextension,Glutes,6,1,180,180.0
+u3,2,(Assisted) Nordic Hamstring Curls,Legs,4,1,120,252.5
+u3,2,Hanging Leg Raises,Core,5,5,120,132.5
+u3,2,Back Extensions,Glutes,6,3,200,180.0

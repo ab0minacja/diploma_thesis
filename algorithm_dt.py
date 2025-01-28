@@ -184,7 +184,7 @@ def start_algorithm():
             "Less than hour": (4, 5),
             "One hour": (5, 6),
             "One and a half hours": (6, 7),
-            "Two hours and more": (7, 7),
+            "Two hours and more": (7, 8),
         }
 
         min_exercises, max_exercises = time_to_exercise_range.get(time_per_workout, (4, 7))

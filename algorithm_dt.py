@@ -14,32 +14,21 @@ def start_algorithm():
     clean_data_path = "eclean_data_updated.csv"
     user_database_path = "user_database.csv"
 
-    # Wczytanie plików
     clean_data = pd.read_csv(clean_data_path)
     user_database = pd.read_csv(user_database_path, header=0)
  
-
-    # Usunięcie spacji z nazw kolumn w user_database
     user_database.columns = user_database.columns.str.strip()
 
-    # Znalezienie wspólnych kolumn między clean_data i user_database
     shared_columns = [col for col in user_database.columns if col in clean_data.columns]
     print(shared_columns)
-    # Dodanie kolumny "Exercise" do clean_data
     shared_columns.append("Exercise")
-
-    # Wczytanie clean_data tylko z wybranymi kolumnami
     df = pd.read_csv(clean_data_path, usecols=shared_columns)
     df = df.dropna()
-
-    # Podział na cechy i target
     X = df.drop("Exercise", axis=1)
     y = df["Exercise"]
 
-    # Podział na dane treningowe i testowe
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=1)
 
-    # Trenowanie modelu
     model = RandomForestClassifier(n_estimators=30, max_depth=44, random_state=42)
     model.fit(X_train, y_train)
     y_pred = model.predict(X_test)
@@ -85,7 +74,6 @@ def start_algorithm():
     common_columns = [col for col in X.columns if col in user_database.columns]
     new_user = last_user[common_columns].to_dict()
     nickname = last_user["Nickname"]
-    # Wczytanie słowników kodowania
     dictionaries = {}
     dictionary_path = "dictionaries"
     for filename in os.listdir(dictionary_path):
@@ -94,10 +82,9 @@ def start_algorithm():
             with open(os.path.join(dictionary_path, filename), "r") as file:
                 dictionaries[name] = json.load(file)
 
-    # Funkcja do kodowania danych użytkownika
     def encode_value(dictionary, value):
         return dictionary.get(value, 0)
-    #mapping values 
+    #Obsługa przypadku, gdy użytkownik podał/wybrał wiele wartości dla jednego pola kwestionariusza
     if new_user["Target Gender"] == "Male":
         new_user["Target Gender"] = 'Male, Other'
     elif new_user["Target Gender"] == "Female":
@@ -126,9 +113,8 @@ def start_algorithm():
     else: pass
     print(new_user["Target Gender"])
     def generate_combinations(column_value):
-        # Dzieli wartości rozdzielone przecinkiem i tworzy listę unikalnych kombinacji
         if pd.isna(column_value) or not isinstance(column_value, str):
-            return [[]]  # Brak danych
+            return [[]]  
         values = [v.strip() for v in column_value.split(",")]
         return [list(comb) for comb in product(values, repeat=1)]
 
@@ -137,7 +123,6 @@ def start_algorithm():
     equipment_required_combinations = generate_combinations(new_user.get("Equipment Required_y", ""))
     target_gender_combinations = generate_combinations(new_user.get("Target Gender", ""))
     time_per_workout_combinations = generate_combinations(new_user.get("Time Per Workout", ""))
-    print("Rozpoczęto testowanie kombinacji...")
     results = []
     exercise_to_muscle = dictionaries.get("encode_etm", {})
 
@@ -145,7 +130,6 @@ def start_algorithm():
         for eq_comb in equipment_required_combinations:
             for tg_comb in target_gender_combinations:
                 for tpw_comb in time_per_workout_combinations:
-                    # Tworzenie kodowanego użytkownika
                     new_user_coded = {}
                     for col in X_train.columns:
                         if col == "Larger Body Parts":
@@ -164,16 +148,12 @@ def start_algorithm():
                             new_user_coded[col] = encode_value(dictionaries.get("encode_dpw", {}), new_user.get(col, 0))
                         else:
                             pass
-                    # Tworzenie DataFrame
                     print(new_user_coded)
                     new_user_df = pd.DataFrame([new_user_coded], columns=X_train.columns)
-
-                    # Predykcja i prawdopodobieństwa
                     probabilities = model.predict_proba(new_user_df)
                     top_n = 10
                     top_classes_indices = probabilities[0].argsort()[-top_n:][::-1]
                     exercise_to_type_id = clean_data.set_index("Exercise")["Exercise Type ID"].to_dict()
-                    # Generowanie top_exercises z grupą mięśniową
                     top_exercises = [
                         (
                             model.classes_[i],  # Ćwiczenie
@@ -184,14 +164,12 @@ def start_algorithm():
                         )
                         for i in top_classes_indices
                     ]               
-
-                    # Debugowanie - Wyświetlenie top_exercises z grupami mięśniowymi
                     print("Top Exercises with Muscle Groups:")
                     for exercise, prob, muscle_group, ex_type in top_exercises:
                         print(f"Exercise: {exercise}, Probability: {prob:.2%}, Muscle Group: {muscle_group}, ex_type: {ex_type}")
 
         # Wyświetlanie wyników
-    print("\n=== Wyniki kombinacji ===\n")
+    print("Classification results")
     for result in results:
         print(f"Larger Body Parts: {', '.join(result['Larger Body Parts'])}")
         print(f"Equipment Required: {', '.join(result['Equipment Required_y'])}")
@@ -200,22 +178,8 @@ def start_algorithm():
         print("Top Exercises:")
         for exercise, probability in result['Top Exercises']:
             print(f"  - {exercise}: {probability:.2%}")
-        print("-" * 50)  # Separator między wynikami
+        print("-" * 50)
     def generate_plan(top_exercises, muscle_groups, days_per_week, time_per_workout, nickname=nickname):
-        """
-        Tworzy plan treningowy na podstawie top_exercises.
-
-        Args:
-        - top_exercises: Lista ćwiczeń z prawdopodobieństwami i grupami mięśniowymi.
-        - muscle_groups: Lista grup mięśniowych zadeklarowanych przez użytkownika.
-        - days_per_week: Liczba dni treningowych podana przez użytkownika.
-        - time_per_workout: Czas treningu podany przez użytkownika.
-        - nickname: Nazwa użytkownika.
-
-        Returns:
-        - plan: Lista dni z przydzielonymi ćwiczeniami.
-        """
-        # Mapowanie czasu na zakres liczby ćwiczeń
         time_to_exercise_range = {
             "Less than hour": (4, 5),
             "One hour": (5, 6),
@@ -223,7 +187,6 @@ def start_algorithm():
             "Two hours and more": (7, 7),
         }
 
-        # Określ zakres liczby ćwiczeń dla danego czasu treningu
         min_exercises, max_exercises = time_to_exercise_range.get(time_per_workout, (4, 7))
 
         plan = []
@@ -233,7 +196,7 @@ def start_algorithm():
             daily_plan = []
             daily_exercise_types = set()
 
-            # Dodaj ćwiczenia dla każdej zadeklarowanej grupy mięśniowej
+            #Dodawanie do planu ćwiczeń dla każdej zadeklarowanej grupy mięśniowej
             for muscle in muscle_groups:
                 muscle_exercises = [
                     (exercise, prob, muscle_group, exercise_type)
@@ -250,7 +213,7 @@ def start_algorithm():
                     used_exercises.add(selected_exercise[0])
                     daily_exercise_types.add(selected_exercise[3])
 
-            # Dodaj dodatkowe ćwiczenia do osiągnięcia minimalnej liczby
+            #Dodatkowe ćwiczenia (o mniejszym prawdopodobnieństwie), dodawane jeśli nie osiągnięto wcześniej oczekiwanej liczby ćwiczeń
             additional_exercises = [
                 (exercise, prob, muscle_group, exercise_type)
                 for exercise, prob, muscle_group, exercise_type in top_exercises
@@ -264,7 +227,7 @@ def start_algorithm():
                 used_exercises.add(selected_exercise[0])
                 daily_exercise_types.add(selected_exercise[3])
 
-            # Jeśli nadal nie osiągnięto minimalnej liczby ćwiczeń, pozwól na powtórzenie exercise_type_id
+            #Jeśli po powyższych punktach nadal nie osiągnięto minimalnej liczby ćwiczeń, zezwolono na powtórzenie ćwiczeń
             if len(daily_plan) < min_exercises:
                 repeated_exercises = [
                     (exercise, prob, muscle_group, exercise_type)
@@ -277,10 +240,10 @@ def start_algorithm():
                     selected_exercise = repeated_exercises.pop(0)
                     daily_plan.append(selected_exercise)
 
-            # Ogranicz do maksymalnej liczby ćwiczeń
+            #Jesli ćwiczeń jest za dużo, ogranicza się je do zadanej maksymalnej liczby ćwiczeń
             daily_plan = daily_plan[:max_exercises]
 
-            # Dodaj dzień do planu
+            #Zapisywanie dnia treningowego w planie
             plan.append({
                 "User": nickname,
                 "Day": day,

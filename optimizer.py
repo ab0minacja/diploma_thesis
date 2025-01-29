@@ -14,9 +14,8 @@ def find_muscle_group(exercise_id, data):
 
 
 def extract_values(row, exercise):
-    """Wyciąga wartości dla konkretnego ćwiczenia z kolumny Exercises Tried."""
-    if pd.isna(row):  # Obsługa wartości NaN
-        return 0  # Wartość domyślna
+    if pd.isna(row):  
+        return 0  
     try:
         exercises = dict(item.split(": ") for item in row.split("; "))
         return int(exercises.get(exercise, 0))
@@ -47,25 +46,7 @@ def optimize():
         e_lvl = new_user["Experience Level"]
         t_gender = new_user["Target Gender"]
         bodyweight = float(new_user["Bodyweight"])
-        '''
-        # Wyświetlenie problematycznych wierszy
-        missing_exercises = user_database[user_database["Exercises Tried"].isna()]
-        print("Brakujące dane dla Exercises Tried:")
-        print(missing_exercises)
 
-
-        # Wyciągnięcie wyników ćwiczeń
-        user_database["Deadlift"] = user_database["Exercises Tried"].apply(lambda x: extract_values(x, "Deadlift"))
-        user_database["Squat"] = user_database["Exercises Tried"].apply(lambda x: extract_values(x, "Squat"))
-        user_database["Bench Press"] = user_database["Exercises Tried"].apply(lambda x: extract_values(x, "Bench Press"))
-
-        # Wyświetlenie wyników
-        print(user_database[["Nickname", "Deadlift", "Squat", "Bench Press"]])
-        deadlift = user_database["Deadlift"].iloc[-1]
-        squat = user_database["Squat"].iloc[-1]
-        b_press = user_database["Bench Press"].iloc[-1]'''
-
-        # Wczytanie danych użytkownika z pliku JSON
         with open(f"users/{nickname}.json", "r") as json_file:
             data = json.load(json_file)
         with open(f"dictionaries/encode_lbp.json", "r") as json_file:
@@ -75,8 +56,6 @@ def optimize():
         weights = {}
         pause, sets, reps = 0, 0, 0
 
-        # Określanie wag w zależności od poziomu zaawansowania
-                # Określanie wag w zależności od poziomu zaawansowania
         def assign_beginner_weights(bodyweight, t_gender, goal):
             if goal == "Build Muscle":
                 const = random.randrange(55,85,5)/100
@@ -206,32 +185,8 @@ def optimize():
         elif e_lvl == "Intermediate":
             weights = assign_intermediate_weights(bodyweight, t_gender, goal)
         else:
-            weights = assign_advanced_weights(bodyweight, t_gender, goal)
+            weights = assign_advanced_weights(bodyweight, t_gender, goal)         
 
-        '''else:  # Średniozaawansowani i zaawansowani
-            weights = {}
-            if int(squat) > 0:
-                weights.update({
-                    4: squat * 0.5,
-                    5: squat * 0.5,
-                    6: squat * 0.3
-                })
-            if int(deadlift) > 0:
-                weights.update({
-                    2: deadlift * 0.4,
-                    3: deadlift * 0.1,
-                })
-            if int(b_press) > 0:
-                weights.update({
-                    1: b_press * 0.4,
-                    3: (deadlift * 0.1 + b_press * 0.3) / 2,
-                })
-            # Sprawdzenie brakujących wartości
-            if not weights:  # Jeśli brak danych dla ćwiczeń
-                print("Brak danych dla squat, deadlift i bench press. Przypisano wartości jak dla początkującego.")
-                weights = assign_beginner_weights(bodyweight, t_gender)'''            
-
-        # Funkcja do dopasowania liczby serii i powtórzeń
         def calculate_sets_reps(goal):
             if goal == "Build Muscle":
                 return random.randint(3, 5), random.randint(6, 12), 10 * random.randint(3, 9)
@@ -242,7 +197,6 @@ def optimize():
             else:
                 return random.randint(3, 6), random.randint(6, 12), 10 * random.randint(3, 6)
 
-        # Tworzenie planu na podstawie danych z JSON
         workout_plan = []
         for day in data:
             for exercise in day["Exercises"]:
@@ -250,13 +204,10 @@ def optimize():
                 muscle_group = find_muscle_group(exercise_id, data)
 
                 if muscle_group is not None:
-                    # Obliczanie unikalnych wartości dla każdego ćwiczenia
                     sets, reps, pause = calculate_sets_reps(goal)
 
-                    # Pobranie ciężaru dla danej grupy mięśniowej
                     weight = weights.get(muscle_group, 0)
 
-                    # Dodanie ćwiczenia do planu
                     workout_plan.append(
                         {
                             "User": nickname,
@@ -271,7 +222,6 @@ def optimize():
                         }
                     )
 
-        # Wyświetlenie planu treningowego
         print("Plan treningowy:")
         for exercise in workout_plan:
             print(exercise)
@@ -284,11 +234,9 @@ def optimize():
         with open(csv_file, mode="a", newline='', encoding="utf-8") as file:
             writer = csv.DictWriter(file, fieldnames=csv_columns)
 
-            # Jeśli plik nie istnieje, zapisz nagłówki
             if not file_exists:
                 writer.writeheader()
 
-            # Zapisz dane ćwiczeń
             writer.writerows(workout_plan)
 
         print(f"Plan treningowy zapisano w pliku: {csv_file}")

@@ -14,7 +14,7 @@ def update_weights(progress, plan):
             if len(current_weight) > 0:
                 current_weight = current_weight[0]
             else:
-                continue  # Brak wartości "Predicted Weight" dla tego ćwiczenia, przejdź do następnego
+                continue  # Brak wartości "Predicted Weight" dla tego ćwiczenia powoduje przejscie do kolejnego cwiczenia
 
             if user_feedback == 'OK':
                 new_weight = current_weight * 1.025

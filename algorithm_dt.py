@@ -59,14 +59,11 @@ def start_algorithm():
     plt.plot(range(1, n), f1_s, label='Miara F1', color='green')
     plt.plot(range(1, n), precision, label='Miara precyzji', color='red')
     plt.plot(range(1, n), recall, label='Miara czułości', color='purple')
-
-    # Dodanie etykiet i tytułu
     plt.xlabel('Numer iteracji',fontsize=14)
     plt.ylabel('Uzyskana ocena',fontsize=14)
     plt.title('Przebieg zmian ocen jakości modelu uzyskany za pomocą różnych miar dla poszczególnych iteracji')
     plt.legend()
 
-    # Pokaż wykres
     plt.show()
 '''
     # Wczytanie danych nowego użytkownika

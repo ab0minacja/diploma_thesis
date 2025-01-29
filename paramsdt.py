@@ -4,30 +4,26 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import cross_val_score
 import pandas as pd
-# Wczytanie clean_data tylko z wybranymi kolumnami
 df = pd.read_csv("eclean_data_updated.csv")
 df = df.dropna()
 
-# Podział na cechy i target
 X = df.drop("Exercise", axis=1)
 y = df["Exercise"]
 def simulate_max_depth_effect(X, y):
-    max_depths = range(1, 51)  # Testujemy max_depth od 1 do 20
+    max_depths = range(1, 51)  
     mean_accuracies = []
 
     for max_depth in max_depths:
-        # Tworzymy model drzewa decyzyjnego
+
         tree_model = DecisionTreeClassifier(max_depth=max_depth, random_state=42)
         
         # Ocena modelu przy pomocy cross-validation
         scores = cross_val_score(tree_model, X, y, cv=3, scoring='accuracy')
         mean_accuracies.append(scores.mean())
 
-    # Znajdowanie najlepszej wartości max_depth
     best_max_depth = max_depths[np.argmax(mean_accuracies)]
     best_accuracy = max(mean_accuracies)
 
-    # Tworzenie wykresu
     plt.figure(figsize=(10, 6))
     plt.plot(max_depths, mean_accuracies, marker='o')
     plt.title("Wpływ ograniczenia maksymalnej głębokości drzew decyzyjnych na dokładność modelu utworzonego przy pomocy lasu losowego")
@@ -42,14 +38,11 @@ def simulate_max_depth_effect(X, y):
 
 
 def simulate_n_estimators_effect(X, y):
-    n_estimators_range = range(10, 210, 10)  # Testujemy liczby drzew od 10 do 200 (co 10)
+    n_estimators_range = range(10, 210, 10)  # Test liczby drzew od 10 do 200 (co 10)
     mean_accuracies = []
 
     for n_estimators in n_estimators_range:
-        # Tworzymy model lasu losowego
         forest_model = RandomForestClassifier(n_estimators=n_estimators, random_state=42)
-        
-        # Ocena modelu przy pomocy cross-validation
         scores = cross_val_score(forest_model, X, y, cv=5, scoring='accuracy')
         mean_accuracies.append(scores.mean())
 
@@ -57,7 +50,6 @@ def simulate_n_estimators_effect(X, y):
     best_n_estimators = n_estimators_range[np.argmax(mean_accuracies)]
     best_accuracy = max(mean_accuracies)
 
-    # Tworzenie wykresu
     plt.figure(figsize=(10, 6))
     plt.plot(n_estimators_range, mean_accuracies, marker='o')
     plt.title("Wpływ ograniczenia maksymalnej liczby drzew decyzyjnych na dokładność modelu utworzonego przy pomocy lasu losowego")
@@ -79,25 +71,19 @@ def measure_time_and_accuracy(X, y, max_depths, n_estimators, num_trials=10):
         total_accuracy = 0
 
         for _ in range(num_trials):
-            # Tworzymy model lasu losowego
             forest_model = RandomForestClassifier(n_estimators=n_estimators, max_depth=max_depth, random_state=42)
-            
-            # Mierzenie czasu treningu
             start_time = time.time()
             scores = cross_val_score(forest_model, X, y, cv=5, scoring='accuracy')
             end_time = time.time()
 
-            # Aktualizacja sum dla średnich
             elapsed_time = end_time - start_time
             mean_accuracy = scores.mean()
             total_time += elapsed_time
             total_accuracy += mean_accuracy
 
-        # Obliczanie średnich wyników z 10 prób
         avg_time = total_time / num_trials
         avg_accuracy = total_accuracy / num_trials
 
-        # Zapis wyników
         results.append({
             'Maksymalna głębokość drzew decyzyzjnych': max_depth,
             'Maksymalna liczba drzew decyzyjnych': n_estimators,
@@ -107,37 +93,32 @@ def measure_time_and_accuracy(X, y, max_depths, n_estimators, num_trials=10):
 
     return results
 
-    # Definiowanie parametrów
-max_depths = [25, 44]  # Ograniczenia głębokości
-n_estimators = 30      # Liczba drzew
-
-    # Wywołanie funkcji
+# Definiowanie parametrów
+max_depths = [25, 44] 
+n_estimators = 30  
 
 
 def simulate_n_estimators_time_accuracy(X, y):
-    n_estimators_range = range(10, 210, 10)  # Testujemy liczby drzew od 10 do 200 (co 10)
+    n_estimators_range = range(10, 210, 10)  
     mean_accuracies = []
     training_times = []
 
     for n_estimators in n_estimators_range:
-        # Tworzymy model lasu losowego
         forest_model = RandomForestClassifier(n_estimators=n_estimators, random_state=42)
-        
-        # Mierzenie czasu treningu
+    
         start_time = time.time()
         scores = cross_val_score(forest_model, X, y, cv=5, scoring='accuracy')
         end_time = time.time()
 
-        # Zapis wyników
+
         training_times.append(end_time - start_time)
         mean_accuracies.append(scores.mean())
 
-    # Znajdowanie najlepszej wartości n_estimators
+
     best_n_estimators = n_estimators_range[np.argmax(mean_accuracies)]
     best_accuracy = max(mean_accuracies)
 
-
-''' # Tworzenie wykresów
+     # Tworzenie wykresów
     plt.figure(figsize=(12, 8))
 
     # Wykres dokładności
@@ -162,12 +143,11 @@ def simulate_n_estimators_time_accuracy(X, y):
     plt.show()
 
     print(f"Najlepsza wartość n_estimators: {best_n_estimators} z dokładnością: {best_accuracy:.2%}")
-    '''
+
 
 results = measure_time_and_accuracy(X, y, max_depths, n_estimators)
 results_df = pd.DataFrame(results)
 print(results_df)
-# Wyświetlenie tabeli w eleganckim stylu
 fig, ax = plt.subplots(figsize=(6, 2))
 ax.axis('tight')
 ax.axis('off')

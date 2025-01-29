@@ -132,7 +132,6 @@ def submit_form():
     if not validate_tab5():
         return
 
-    # Przygotowanie danych do zapisu w CSV
     form_data = {
         "Nickname": nick_var.get(),
         "Target Gender": gender_var.get(),
@@ -159,30 +158,29 @@ def submit_form():
 
     messagebox.showinfo("Form Submitted", "Your data has been saved successfully!")
 
-    # Uruchamianie algorithm_dt
     try:
-        algorithm_dt.start_algorithm()  # Wywołanie głównej funkcji w algorithm_dt
+        algorithm_dt.start_algorithm()  
         print("algorithm_dt finished successfully.")
     except Exception as e:
         messagebox.showerror("Error", f"Error while running algorithm_dt: {e}")
         return
 
-    # Uruchamianie optimizer
+    
     try:
-        optimizer.optimize()  # Wywołanie głównej funkcji w optimizer
+        optimizer.optimize()  
         print("optimizer finished successfully.")
     except Exception as e:
         messagebox.showerror("Error", f"Error while running optimizer: {e}")
         return
 
-    # Wyświetlenie przycisku „Go to Plan” tylko przy rejestracji
+    
     show_go_to_plan_button(nick_var.get(), is_registration=True)
 
 
 def show_go_to_plan_button(nickname, is_registration=False):
     """Wyświetla przycisk przejścia do planu po zakończeniu optymalizacji."""
     if not is_registration:
-        return  # Wyświetlaj przycisk tylko dla nowo zarejestrowanego użytkownika
+        return  # Wyświetla przycisk tylko dla nowo zarejestrowanego użytkownika
 
     go_to_plan_window = tk.Toplevel()
     go_to_plan_window.title("Optimization Complete")
@@ -214,7 +212,6 @@ def update_progress(nickname, week, day, day_data, progress_file="user_progress.
     else:
         progress_data = pd.DataFrame(columns=header)
 
-    # Tworzenie DataFrame z nowymi danymi
     new_data = pd.DataFrame(day_data, columns=header)
 
     # Usunięcie istniejących wpisów dla tego użytkownika, tygodnia i dnia
@@ -225,11 +222,7 @@ def update_progress(nickname, week, day, day_data, progress_file="user_progress.
             (progress_data["Day"] == day)
         )
     ]
-
-    # Dodanie nowych wpisów
     progress_data = pd.concat([progress_data, new_data], ignore_index=True)
-
-    # Zapisanie do pliku CSV
     try:
         progress_data.to_csv(progress_file, index=False)
         messagebox.showinfo("Success", f"Progress for Day {day} saved successfully!")
@@ -237,7 +230,6 @@ def update_progress(nickname, week, day, day_data, progress_file="user_progress.
         messagebox.showerror("Error", f"Failed to save progress: {e}")
         return
 
-    # Dopiero potem wywołanie funkcji update_weights
     try:
         workout_plan = pd.read_csv("user_workout_plan.csv")
         updated_plan = progress.update_weights(progress_data, workout_plan)
@@ -251,21 +243,19 @@ def display_workout_plan(nickname, user_data):
     """Wyświetla plan treningowy użytkownika z dodatkowymi funkcjami."""
     plan_window = tk.Toplevel()
     plan_window.title(f"{nickname}'s Workout Plan")
-    plan_window.geometry("1000x700")  # Zwiększony rozmiar okna
+    plan_window.geometry("1000x700")  
     plan_window.resizable(False, False)
 
-    # Główne zakładki dla tygodni
     main_notebook = ttk.Notebook(plan_window)
     main_notebook.pack(fill="both", expand=True, padx=10, pady=10)
 
-    # Style dla podświetlania aktywnych zakładek
     style = ttk.Style()
     style.theme_use("default")
     style.map("TNotebook.Tab", background=[("selected", "#cce7ff")])
 
     weeks = 4
     days_per_week = user_data["Day"].max()
-    daily_results = {}  # Przechowywanie wyników dla każdego dnia
+    daily_results = {} 
 
     def get_personal_best(exercise_name):
         """Pobiera najlepszy wynik użytkownika dla danego ćwiczenia."""
@@ -281,7 +271,6 @@ def display_workout_plan(nickname, user_data):
         return "N/A"
 
     for week in range(1, weeks + 1):
-        # Zakładka dla tygodnia
         week_tab = ttk.Notebook(main_notebook)
         main_notebook.add(week_tab, text=f"Week {week}")
 
@@ -290,11 +279,11 @@ def display_workout_plan(nickname, user_data):
             if day_data.empty:
                 continue
 
-            # Zakładka dla dnia
+
             day_frame = ttk.Frame(week_tab)
             week_tab.add(day_frame, text=f"Day {day}")
 
-            daily_results[day] = []  # Inicjalizacja wyników dla danego dnia
+            daily_results[day] = []  
 
             for _, exercise in day_data.iterrows():
                 exercise_frame = tk.LabelFrame(day_frame, text=exercise["Exercise"], font=("Arial", 10, "bold"))
@@ -320,7 +309,7 @@ def display_workout_plan(nickname, user_data):
                 )
                 feedback_menu.pack(side="left", padx=5)
 
-                # Dropdown menu and label
+
                 tk.Label(exercise_frame, text="Have you tried different weight?", font=("Arial", 10)).pack(side="left", padx=5)
                 dropdown_var = tk.StringVar(value="No")  # Domyślna wartość to "No"
                 dropdown_menu = ttk.Combobox(
@@ -338,30 +327,26 @@ def display_workout_plan(nickname, user_data):
                 weight_entry = tk.Entry(exercise_frame, textvariable=weight_var, width=8, font=("Arial", 10))
                 weight_entry.pack(side="left", padx=5)
 
-                # Funkcja do zapisu danych ćwiczenia
+      
                 def save_exercise_feedback(e, fv, wv, dv, d):
                     """Zapisuje dane ćwiczenia w daily_results."""
-                    # Automatycznie ustaw domyślną wagę i status, jeśli wybrano "Ok" i "No"
+                    # Automatycznie ustawianie domyślnej wagi i statusu, jeśli wybrano "Ok" i "No"
                     if dv.get() == "No" and fv.get() == "Ok":
-                        weight_to_save = e["Weight (kg)"]  # Default Weight
+                        weight_to_save = e["Weight (kg)"] 
                         feedback_to_save = "Ok"
                     else:
-                        # Jeśli użytkownik zmienia dane, użyj wprowadzonych wartości
                         weight_to_save = e["Weight (kg)"] if dv.get() == "No" else wv.get()
                         feedback_to_save = fv.get()
 
                     if d not in daily_results:
                         daily_results[d] = []
 
-                    # Usuń istniejące wpisy dla tego ćwiczenia, jeśli istnieją
                     daily_results[d] = [entry for entry in daily_results[d] if entry[3] != e["Exercise"]]
 
-                    # Dodaj nowe dane
                     daily_results[d].append(
                         [nickname, week, d, e["Exercise"], weight_to_save, feedback_to_save,e["Weight (kg)"]]
                     )
 
-                    # Debugging: Sprawdź zawartość daily_results
                     print(f"Updated daily_results for Day {d}: {daily_results[d]}")
 
 
@@ -380,7 +365,6 @@ def display_workout_plan(nickname, user_data):
                 )
 
 
-            # Dodaj przycisk zapisu dla danego dnia
             save_button = tk.Button(
                 day_frame,
                 text=f"Save Progress for Day {day}",
@@ -425,30 +409,30 @@ def load_and_display_plan(nickname):
 root = tk.Tk()
 root.title("Workout Planner")
 root.geometry("500x600")
-root.withdraw()  # Ukryj główną aplikację do momentu rejestracji
+root.withdraw()  
 # --- Dodaj styl dla zakładek notebooka ---
 style = ttk.Style()
 style.theme_use("default")
-style.configure("TNotebook", background="#FFFFFF", borderwidth=0)  # Białe tło dla całego notebooka
+style.configure("TNotebook", background="#FFFFFF", borderwidth=0) 
 style.configure("TNotebook.Tab", 
-                background="#E0E0E0",  # Jasnoszare tło zakładek
-                foreground="black",  # Czarny tekst
-                padding=[10, 5],  # Dopasowanie paddingu
+                background="#E0E0E0",  
+                foreground="black",  
+                padding=[10, 5],  
                 font=("Arial", 10, "bold"), 
-                anchor="center")  # Wycentrowanie tekstu
+                anchor="center")  
 style.map("TNotebook.Tab", 
-          background=[("selected", "#C0C0C0")],  # Tło aktywnej zakładki
-          foreground=[("selected", "black")])  # Czarny tekst dla aktywnej zakładki
+          background=[("selected", "#C0C0C0")],  
+          foreground=[("selected", "black")])  
 
 # --- Notebook ---
 notebook = ttk.Notebook(root, style="TNotebook")
 notebook.pack(pady=10, expand=True)
 
-# --- Zwiększenie rozmiaru okna ---
-root.geometry("700x700")  # Zwiększenie rozmiaru okna
+
+root.geometry("700x700") 
 
 
-# Dodanie zakładek do formularza
+
 frame1 = tk.Frame(notebook )
 frame2 = tk.Frame(notebook )
 frame3 = tk.Frame(notebook )
@@ -467,7 +451,7 @@ gender_var = tk.StringVar(value="Select your gender:")
 bodyweight_var = tk.StringVar(value="0")
 
 inner_frame1 = tk.Frame(frame1)
-inner_frame1.pack(expand=True, pady=30)  # Wyśrodkowanie i przesunięcie w dół
+inner_frame1.pack(expand=True, pady=30) 
 
 tk.Label(inner_frame1, text="Nickname:").grid(row=0, column=0, pady=5, sticky="w", padx=10)
 tk.Entry(inner_frame1, textvariable=nick_var).grid(row=0, column=1, pady=5, padx=10)
@@ -568,13 +552,12 @@ for exercise in ["Bench Press", "Squat           ", "Deadlift       "]:
     tk.Label(frame, text="Max weight (kg):").pack(side="left", padx=5)
     
     entry = tk.Entry(frame, textvariable=weight_var, width=10)
-    entry.pack(side="left", padx=(5, 20))  # Zwiększenie paddingu po prawej stronie, aby wyrównać do prawej
+    entry.pack(side="left", padx=(5, 20))  
     
     exercises_vars[exercise] = (var, weight_var)
 
 
 tk.Button(inner_frame5, text="Submit", command=submit_form).pack(pady=20)
 
-# Start the app
 show_start_panel()
 root.mainloop()

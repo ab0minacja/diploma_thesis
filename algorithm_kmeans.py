@@ -17,37 +17,29 @@ def start_algorithm():
     clean_data = pd.read_csv(clean_data_path)
     user_database = pd.read_csv(user_database_path, header=0)
 
-    # Usunięcie spacji z nazw kolumn w user_database
     user_database.columns = user_database.columns.str.strip()
 
-    # Znalezienie wspólnych kolumn między clean_data i user_database
     shared_columns = [col for col in user_database.columns if col in clean_data.columns]
     shared_columns.append("Exercise")  # Dodanie kolumny "Exercise" do analizy
 
-    # Wczytanie clean_data tylko z wybranymi kolumnami
     df = pd.read_csv(clean_data_path, usecols=shared_columns + ["Exercise Type ID", "Larger Body Parts"])
     df = df.dropna()
 
-    # Podział na cechy i target
     X = df.drop(["Exercise", "Exercise Type ID", "Larger Body Parts"], axis=1)
     y = df["Exercise"]
 
-    # Standaryzacja danych
     scaler = StandardScaler()
     X_scaled = scaler.fit_transform(X)
 
-    # Inicjalizacja modelu KMeans
     unique_points = len(pd.DataFrame(X_scaled).drop_duplicates())
     n_clusters = 14
     kmeans = KMeans(n_clusters=n_clusters, random_state=42, n_init="auto")
     kmeans.fit(X_scaled)
 
-    # Wczytanie danych nowego użytkownika
     last_user = user_database.iloc[-1]
     common_columns = [col for col in X.columns if col in user_database.columns]
     new_user = last_user[common_columns].to_dict()
 
-    # Wczytanie słowników kodowania
     dictionaries = {}
     dictionary_path = "dictionaries"
     for filename in os.listdir(dictionary_path):
@@ -56,18 +48,15 @@ def start_algorithm():
             with open(os.path.join(dictionary_path, filename), "r") as file:
                 dictionaries[name] = json.load(file)
 
-    # Funkcja do kodowania danych użytkownika
     def encode_value(dictionary, value):
         return dictionary.get(value, 0)
 
-    # Generowanie kombinacji wartości
     def generate_combinations(column_value):
         if pd.isna(column_value) or not isinstance(column_value, str):
             return [[]]  # Brak danych
         values = [v.strip() for v in column_value.split(",")]
         return [list(comb) for comb in product(values, repeat=1)]
 
-    # Generowanie wyników
     larger_body_parts_combinations = generate_combinations(new_user.get("Larger Body Parts", ""))
     equipment_required_combinations = generate_combinations(new_user.get("Equipment Required_y", ""))
     target_gender_combinations = generate_combinations(new_user.get("Target Gender", ""))
@@ -94,25 +83,21 @@ def start_algorithm():
                         else:
                             new_user_coded[col] = encode_value(dictionaries.get(f"encode_{col.lower()}", {}), new_user.get(col, 0))
 
-                    # Standaryzacja
                     new_user_scaled = scaler.transform(pd.DataFrame([new_user_coded], columns=X.columns))
                     cluster = kmeans.predict(new_user_scaled)[0]
                     cluster_exercises = df.loc[kmeans.labels_ == cluster]
 
                     print(f"Cluster: {cluster}, Exercises Found: {len(cluster_exercises)}")
 
-                    # Globalny zbiór ćwiczeń dla całego planu
                     used_exercises_global = set()
 
-                    # Generowanie planu
                     days_per_week = int(new_user.get("Days Per Week", 3))
                     plan = []
 
                     for day in range(1, days_per_week + 1):
-                        daily_exercises = []  # Lista ćwiczeń dla danego dnia
-                        used_exercises_daily = set()  # Zbiór ćwiczeń użytych tego dnia
+                        daily_exercises = []  
+                        used_exercises_daily = set()  
                         
-                        # Różnorodność grup mięśniowych
                         muscle_groups = [mg.strip() for mg in new_user.get("Larger Body Parts", "").split(",") if mg.strip()]
                         if not muscle_groups:
                             muscle_groups = df["Larger Body Parts"].unique().tolist()
@@ -131,15 +116,13 @@ def start_algorithm():
                                     used_exercises_daily.add(exercise_id)
                                     used_exercises_global.add(exercise_id)
                                 
-                                if len(daily_exercises) >= 6:  # Maksymalnie 6 ćwiczeń na dzień
+                                if len(daily_exercises) >= 6:  
                                     break
                             if len(daily_exercises) >= 6:
                                 break
                         
-                        # Dodanie ćwiczeń do planu
                         plan.append({"Day": day, "Exercises": daily_exercises})
 
-    # Zapisywanie planu do JSON
     with open(f"users/{last_user['Nickname']}.json", "w") as json_file:
         json.dump(plan, json_file, indent=4)
 
